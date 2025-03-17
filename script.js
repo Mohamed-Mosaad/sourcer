@@ -1,9 +1,42 @@
+// Initialize EmailJS with your public key
+(function() {
+    emailjs.init("9XdckFDObA0Kd8FNz");
+})();
+
+// Handle form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Show loading state
+    const submitButton = this.querySelector('.submit-button');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    // Send email using EmailJS
+    emailjs.sendForm('service_hywt7rg', 'template_0q23dbb', this)
+        .then(function() {
+            // Success
+            alert('Thank you for your message! We will get back to you soon.');
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            // Error
+            alert('Sorry, there was an error sending your message. Please try again.');
+            console.error('EmailJS Error:', error);
+        })
+        .finally(function() {
+            // Reset button state
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+});
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    navLinks.classList.toggle('active');
     hamburger.classList.toggle('active');
 });
 
@@ -37,17 +70,6 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = 'none';
     }
 });
-
-// Form Submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
-    });
-}
 
 // Animate elements on scroll
 const animateOnScroll = () => {
