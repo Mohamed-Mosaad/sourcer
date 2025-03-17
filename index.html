@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
@@ -92,20 +93,21 @@
         <section id="contact" class="contact">
             <h2>Contact Us</h2>
             <div class="contact-container">
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Your Phone">
-                    <select required>
-                        <option value="">Select Product Category</option>
-                        <option value="fresh">Fresh Produce</option>
-                        <option value="frozen">Frozen Products</option>
-                        <option value="beverages">Beverages</option>
-                        <option value="multiple">Multiple Categories</option>
-                    </select>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <select name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="sourcing">Product Sourcing</option>
+                            <option value="consultation">Business Consultation</option>
+                            <option value="market">Market Research</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
                 <div class="contact-info">
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -113,7 +115,7 @@
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <p>+1 (555) 123-4567</p>
+                        <p>+44 7436 662524</p>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
