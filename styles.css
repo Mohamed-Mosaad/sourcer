@@ -542,4 +542,37 @@ footer {
 .product-details li {
     padding: 0.25rem 0;
     color: #444;
+}
+
+.contact-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    color: #2ecc71;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.footer-addresses {
+    margin-top: 1rem;
+}
+
+.footer-addresses p {
+    margin-bottom: 0.5rem;
+    color: #666;
 } 
